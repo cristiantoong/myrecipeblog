@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  main
+{% endblock title %}
+
+
+
+{% block content %}
+<!-- MAIN PAGE -->
+<div class="main-page-header">
+  <div class="container">
+    <div id="editprofile-page">
+
+      
+      <!-- Register -->
+        <div id="editprofile-form">
+          <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Update Recipe Status</h1>
+
+            <h3>Title: {{ recipe.title }}</h3>
+            <br>
+            <label for="">Status</label>
+            {{ edit_recipe_form.status }}
+            <br>
+            <br>
+            <br>
+
+
+            <div class="inputs2">
+              <button type="submit">Update</button>
+            </div>
+            
+          </form>
+        </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock content %}
+  

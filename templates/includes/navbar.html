@@ -1,0 +1,66 @@
+  <!-- NAV -->
+{% load static %}
+  <header>
+    <div class="nav-full-width">
+      <div class="container">
+        <div id="nav1">
+          <div class="logo">
+            <a href="{% url 'blog:main-view' %}" style="color: #fff;">MyRecipe</a>
+          </div>
+  
+          <div class="right">
+            <form action="{% url 'blog:search-recipes' %}" method="POST">
+              {% csrf_token %}
+              <input type="text" placeholder="Search Recipes" name="searched">
+              <button type="submit" class="search-btn">Search</button>
+            </form>
+          </div>
+        </div>
+     
+      </div>
+    </div>
+   
+  
+  <div class="nav-full-width-2"> 
+    <div class="container">
+      <div id="nav">
+        <ul class="main-nav">
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'blog:main-view' %}">Home</a></li>
+            <li><a href="{% url 'blog:myrecipes-view' %}">My Recipes</a></li>
+            <li><a href="{% url 'blog:create-recipe' %}">Create Recipe</a></li>
+            <li><a href="{% url 'blog:draft-view' %}">Drafts</a></li>
+            <li><a class="categories-btn" href="#">Categories</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          {% else %}
+            <li><a href="{% url 'accounts:login-view' %}">Home</a></li>
+            <li><a class="categories-btn" href="#">Categories</a></li>  
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          {% endif %}
+          
+
+         
+        </ul>
+    
+        <ul class="socials">
+
+          {% if user.is_authenticated %}
+
+            <li>Logged in as: <a href="#" style="color: tomato; font-size: 13px;">{{ request.user.username }}</a></li>
+            <li><a href="{% url 'accounts:profile-detail-view' request.user.profile.slug %}">Profile</a></li>
+            <li><a href="{% url 'accounts:edit-profile' %}">Edit Profile</a></li>
+            <li><a href="{% url 'accounts:logout-view' %}">Logout</a></li>
+          {% else %}
+            <li><a href="#">ig</a></li>
+            <li><a href="#">fb</a></li>
+            <li><a href="#">p</a></li>
+
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+  <!-- END NAV -->

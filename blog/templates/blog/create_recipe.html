@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+  create recipe
+{% endblock title %}
+
+title = models.CharField(max_length=200, null=True, blank=True)
+photo = models.ImageField(null=True, blank=True)
+cooking_time = models.CharField(max_length=50, blank=True)
+author = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='posts')
+description = models.CharField(max_length=500, null=True, blank=True)
+content = RichTextField(blank=True, null=True)
+category = models.ForeignKey(Category, on_delete=models.PROTECT)
+liked = models.ManyToManyField(Profile, blank=True, related_name='likes')
+status = models.CharField(max_length=10, choices=OPTIONS, default='draft')
+updated = models.DateTimeField(auto_now=True)
+created = models.DateTimeField(auto_now_add=True)
+featured = models.BooleanField()
+
+
+
+{% block content %}
+<!-- MAIN PAGE -->
+<div class="main-page-header">
+  <div class="container">
+    <div id="editprofile-page">
+
+      
+      <!-- Create Recipe -->
+        <div id="editprofile-form">
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <h1>Create Recipe</h1>
+
+            <label for="">Title</label>
+            {{ create_recipe_form.title }}
+
+            <label for="">Image</label>
+            {{ create_recipe_form.photo }}
+
+            <label for="">Cooking Time</label>
+            {{ create_recipe_form.cooking_time }}
+
+            <label for="">Description</label>
+            {{ create_recipe_form.description }}
+            
+            <label for="">Body</label>
+            <br>
+            <br>
+            {{ create_recipe_form.content | safe }}
+            {{ create_recipe_form.media }}
+            <br>
+            <br>
+
+            <label for="">Category</label>
+            {{ create_recipe_form.category }}
+            <br>
+            <br>
+            <label for="">Status</label>
+            {{ create_recipe_form.status }}
+            <br>
+            <br>
+            <label for="">Featured</label>
+            {{ create_recipe_form.featured }}
+
+            <div class="inputs2">
+              <button type="submit">Create</button>
+            </div>
+            
+          </form>
+        </div>
+
+
+    </div>
+  </div>
+</div>
+{% endblock content %}
+  
