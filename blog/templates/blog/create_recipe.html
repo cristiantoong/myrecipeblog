@@ -1,22 +1,11 @@
 {% extends 'base.html' %}
-
+{% load widget_tweaks %}
 
 {% block title %}
   create recipe
 {% endblock title %}
 
-title = models.CharField(max_length=200, null=True, blank=True)
-photo = models.ImageField(null=True, blank=True)
-cooking_time = models.CharField(max_length=50, blank=True)
-author = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='posts')
-description = models.CharField(max_length=500, null=True, blank=True)
-content = RichTextField(blank=True, null=True)
-category = models.ForeignKey(Category, on_delete=models.PROTECT)
-liked = models.ManyToManyField(Profile, blank=True, related_name='likes')
-status = models.CharField(max_length=10, choices=OPTIONS, default='draft')
-updated = models.DateTimeField(auto_now=True)
-created = models.DateTimeField(auto_now_add=True)
-featured = models.BooleanField()
+
 
 
 
@@ -55,15 +44,19 @@ featured = models.BooleanField()
             <br>
 
             <label for="">Category</label>
-            {{ create_recipe_form.category }}
+            <br>
+            <br>
+            {{ create_recipe_form.category|add_class:"custom-select"}}
             <br>
             <br>
             <label for="">Status</label>
-            {{ create_recipe_form.status }}
+            <br>
+            <br>
+            {{ create_recipe_form.status|add_class:"custom-select" }}
             <br>
             <br>
             <label for="">Featured</label>
-            {{ create_recipe_form.featured }}
+            {{ create_recipe_form.featured|add_class:"featured-radio-btn" }}
 
             <div class="inputs2">
               <button type="submit">Create</button>

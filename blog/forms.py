@@ -3,9 +3,11 @@ from .models import Post, Review, RATE_CHOICES
 
 
 class CreateRecipeForm(forms.ModelForm):
+  # featured = forms.BooleanField(widget=forms.RadioSelect(attrs={'class': 'featured-radio-btn'}))
   class Meta:
     model = Post
-    exclude = ('author', 'liked', 'updated', 'created')
+    fields = ('title', 'photo', 'cooking_time', 'description', 'content', 'category', 'status', 'featured')
+    #exclude = ('author', 'liked', 'updated', 'created')
 
 class EditRecipeForm(forms.ModelForm):
   class Meta:

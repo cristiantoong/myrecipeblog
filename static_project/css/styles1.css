@@ -359,7 +359,7 @@ header {
 #main-page .right #login-form form .inputs1 {
   display: flex;
   flex-direction: column;
-  margin-bottom: 4rem;
+  margin-bottom: 5rem;
 } 
 #main-page .right #login-form form label {
   margin-bottom: 1rem;
@@ -567,13 +567,12 @@ width: 50%;
 #editprofile-page #editprofile-form form .inputs1 .left label {
   margin-bottom: 2rem;
 }
-#editprofile-page  #editprofile-form form input {
+#editprofile-page  #editprofile-form form input:not(:last-child) {
   padding: .8rem .8rem;
   border: 1px solid #ccc;
   outline: none;
   width: 100%;
   margin-top: 1rem;
-  /* margin-bottom: 1rem; */
 }
 
 #editprofile-page  #editprofile-form form h1 {
@@ -1142,4 +1141,17 @@ footer .right a {
   font-weight: 600;
   letter-spacing: 3px;
   cursor: pointer;
+}
+
+/* FORM FIELDS WIDGETS */
+.custom-select {
+  width: 300px;
+  padding: .5rem 1rem;
+  font-family: 'Lato', sans-serif;
+}
+.featured-radio-btn {
+
+  width: 20%!important;
+
+
 }

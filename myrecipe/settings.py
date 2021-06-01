@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'accounts',
 
     'ckeditor',
+    'widget_tweaks',
     'django.contrib.humanize'
 ]
 

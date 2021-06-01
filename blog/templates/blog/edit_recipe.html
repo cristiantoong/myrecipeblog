@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load widget_tweaks %}
 
 {% block title %}
   main
@@ -38,20 +38,26 @@
             <br>
             <br>
             <label for="">Content</label>
+            <br>
+            <br>
             {{ edit_recipe_form.content | safe }}
             {{ edit_recipe_form.media }}
             <br>
             <br>
             <label for="">Category</label>
-            {{ edit_recipe_form.category }}
+            <br>
+            <br>
+            {{ edit_recipe_form.category|add_class:"custom-select" }}
             <br>
             <br>
             <label for="">Status</label>
-            {{ edit_recipe_form.status }}
+            <br>
+            <br>
+            {{ edit_recipe_form.status|add_class:"custom-select" }}
             <br>
             <br>
             <label for="">Featured</label>
-            {{ edit_recipe_form.featured }}
+            {{ edit_recipe_form.featured|add_class:"featured-radio-btn" }}
 
             <div class="inputs2">
               <button type="submit">Update</button>
