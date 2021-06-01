@@ -1155,3 +1155,14 @@ footer .right a {
 
 
 }
+
+.review-content-field {
+  resize: none;
+  padding: .5rem 1rem;
+  width: 400px;
+  height: 200px;
+}
+
+.review-content-field:focus {
+  border: 1px solid black;
+}

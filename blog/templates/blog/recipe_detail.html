@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% load widget_tweaks %}
 
 
 {% block title %}
@@ -146,7 +147,7 @@
                     <br>
                     <br>
                     <!-- {{rate_form.content}} -->
-                    <textarea name="content" rows="4"></textarea>
+                    <textarea name="content" rows="4" class="review-content-field"></textarea>
                     <br>
                     <br>
                     <button type="submit" class="review-submit">Submit Review</button>
