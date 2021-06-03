@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
-
+@import "media_queries.css"; 
 
 * {
   margin: 0;
@@ -118,6 +118,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 999;
+  position: relative;
 }
 
 
@@ -1165,4 +1166,45 @@ footer .right a {
 
 .review-content-field:focus {
   border: 1px solid black;
+}
+
+
+/* NAVBAR MOBILE */
+.navbar-mobile {
+  width: 200px;
+  position: absolute;
+  background: #fff;
+  padding: 2rem 0;
+  transform: translateX(-100%);
+  transition: all .3s ease;
+}
+.navbar-mobile ul li {
+  list-style-type: none;
+  padding: 1rem 2rem;
+}
+.navbar-mobile ul li:hover {
+  background: black;
+  cursor: pointer;
+}
+.navbar-mobile ul li:hover a {
+  color: #fff;
+}
+
+/* for javascript */
+.show-navbar-mobile{
+  transform: translateX(0);
+}
+.mobile-menu{
+  display: none;
+}
+.mobile-menu:hover {
+  cursor: pointer;
+}
+
+.mobile-menu .line {
+  display: block;
+  width: 35px;
+  height: 3px;
+  background: #fff;
+  margin-bottom: .4rem;
 }

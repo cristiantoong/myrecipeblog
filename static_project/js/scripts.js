@@ -8,54 +8,19 @@ catBtn.addEventListener('click', function(){
   catModal.classList.toggle("slide-modal");
 })
 
-let slideIndex = 0;
-
-
-function showSlides() {
-    const slides = document.getElementsByClassName("slider");
-    console.log(slides.length)
-
-    for(let i=0; i< slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-
-    slideIndex++;
-
-    if(slideIndex > slides.length ) {
-        slideIndex = 1;
-    }
 
 
 
-    slides[slideIndex - 1].style.display = "block";
 
+// mobile nav
+const mobileBtn = document.querySelector('.mobile-menu');
+const navbarMobile = document.querySelector('.navbar-mobile');
 
-    setTimeout(showSlides, 5000);
+function showSideNavbar() {
+    navbarMobile.classList.toggle('show-navbar-mobile');
 }
 
-
-showSlides();
-
-// toggle eye show password
-const password = document.querySelector('.password-toggle');
-const toggleEye = document.querySelector('.toggle-eye-crossed');
-
-function showHidePassword() {
-    if(password.type === 'password'){
-        password.setAttribute('type', 'text');
-        toggleEye.classList.add('hide');
-        toggleEye.classList.remove('toggle-eye-crossed');
-        toggleEye.classList.add('toggle-eye');
-    }
-    else {
-        password.setAttribute('type', 'password');
-        toggleEye.classList.add('show');
-        toggleEye.classList.remove('toggle-eye');
-        toggleEye.classList.add('toggle-eye-crossed');
-    }
-}
-
-toggleEye.addEventListener('click', showHidePassword);
+mobileBtn.addEventListener('click', showSideNavbar)
 
 // REGISTER FORM
 // const firstname = document.getElementById('firstname');
