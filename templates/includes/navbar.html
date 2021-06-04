@@ -8,7 +8,7 @@
             <a href="{% url 'blog:main-view' %}" style="color: #fff;">MyRecipe</a>
           </div>
   
-          <div class="right">
+          <div class="right search-nav">
             <form action="{% url 'blog:search-recipes' %}" method="POST">
               {% csrf_token %}
               <input type="text" placeholder="Search Recipes" name="searched">
@@ -21,7 +21,7 @@
             <span class="line"></span>
             <span class="line"></span>
           </div>
-          
+
         </div>
      
       </div>
@@ -37,12 +37,12 @@
             <li><a href="{% url 'blog:myrecipes-view' %}">My Recipes</a></li>
             <li><a href="{% url 'blog:create-recipe' %}">Create Recipe</a></li>
             <li><a href="{% url 'blog:draft-view' %}">Drafts</a></li>
-            <li><a class="categories-btn" href="#">Categories</a></li>
+            <li class="categories-btn1"><a href="#">Categories</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           {% else %}
             <li><a href="{% url 'accounts:login-view' %}">Home</a></li>
-            <li><a class="categories-btn" href="#">Categories</a></li>  
+            <li><a class="categories-btn1" href="#">Categories</a></li>  
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           {% endif %}
@@ -78,10 +78,19 @@
 
 
     <div class="navbar-mobile">
+
+      <div class="right">
+        <form action="{% url 'blog:search-recipes' %}" method="POST">
+          {% csrf_token %}
+          <input type="text" placeholder="Search Recipes" name="searched">
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+      </div>
+
       <ul>
         {% if user.is_authenticated %}
           <li><a href="#">Home</a></li>
-          <li><a href="#">Categories</a></li>
+          <li><a class="categories-btn2" href="#">Categories</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#">Profile</a></li>
@@ -89,7 +98,7 @@
           <li><a href="#">Logout</a></li>
         {% else %}
           <li><a href="#">Home</a></li>
-          <li><a href="#">Categories</a></li>
+          <li><a class="categories-btn2" href="#">Categories</a></li> 
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
           <li><a href="#">Login</a></li>

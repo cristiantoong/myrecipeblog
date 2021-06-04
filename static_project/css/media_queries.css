@@ -9,6 +9,12 @@
   .mobile-menu {
     display: block!important;
   }
+  .search-nav{
+    display: none!important;
+  }
+  #nav{
+    display: none!important;
+  }
 }
 
 @media screen and (max-width: 480px) {

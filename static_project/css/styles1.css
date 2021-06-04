@@ -1194,6 +1194,9 @@ footer .right a {
 .show-navbar-mobile{
   transform: translateX(0);
 }
+.hide-navbar-mobile{
+  transform: translateX(-100%);
+}
 .mobile-menu{
   display: none;
 }

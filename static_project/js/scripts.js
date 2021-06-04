@@ -1,14 +1,26 @@
+
+//Show hide categories 
 const catModal = document.querySelector('.categories-modal')
-const catBtn = document.querySelector('.categories-btn')
+//const catBtns = document.querySelectorAll('.categories-btn')
+const catBtn1 = document.querySelector('.categories-btn1')
+const catBtn2 = document.querySelector('.categories-btn2')
 
 
-
-
-catBtn.addEventListener('click', function(){
+catBtn1.addEventListener('click', function(){
   catModal.classList.toggle("slide-modal");
 })
 
+catBtn2.addEventListener('click', function(){
+    catModal.classList.add("slide-modal");
+    navbarMobile.classList.add('hide-navbar-mobile');
+  })
 
+// catBtns.forEach(function(btn){
+//     btn.addEventListener('click', function(){
+//         catModal.classList.toggle("slide-modal");
+//         navbarMobile.classList.toggle('hide-navbar-mobile');
+//     })
+// })
 
 
 
@@ -18,6 +30,8 @@ const navbarMobile = document.querySelector('.navbar-mobile');
 
 function showSideNavbar() {
     navbarMobile.classList.toggle('show-navbar-mobile');
+    catModal.classList.remove("slide-modal");
+
 }
 
 mobileBtn.addEventListener('click', showSideNavbar)
