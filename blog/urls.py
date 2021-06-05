@@ -12,8 +12,6 @@ from .views import (
   delete_recipe_draft,
   search_recipes,
   category_view,
-  #rate
-  #submit_review,
 )
 
 app_name = 'blog'
@@ -26,6 +24,7 @@ urlpatterns = [
   path('edit-recipe/<slug>/', edit_recipe, name='edit-recipe'),
   path('delete-recipe/<slug>/', delete_recipe, name='delete-recipe'),
   path('draft-view/', draft_view, name='draft-view'),
+
   path('edit-draft/<slug>', edit_recipe_draft, name='edit-draft'),
   path('delete-draft/<slug>', delete_recipe_draft, name='delete-draft'),
   path('search-recipes/', search_recipes, name='search-recipes'),

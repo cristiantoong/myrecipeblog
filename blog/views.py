@@ -207,13 +207,33 @@ def delete_recipe(request, slug):
 
 @login_required(login_url="/")
 def draft_view(request):
-  profile = Profile.objects.get(user=request.user)
-  recipe_draft = Post.objects.filter(Q(status='draft') & Q(author=profile))
+  recipe_draft = ''
+  if request.method == 'POST':
+    profile = Profile.objects.get(user=request.user)
+    searched_draft = request.POST['searched-draft']
+    searched_recipe_draft = Post.objects.filter(Q(title__contains=searched_draft) & Q(status='draft') & Q(author=profile))
 
-  context = {
-    'recipe_draft': recipe_draft
-  }
+    searched_count = searched_recipe_draft.count()
+
+    context = {
+      'searched_draft': searched_draft,
+      'searched_recipe_draft': searched_recipe_draft,
+      'searched_count': searched_count,
+    }
+   
+    
+    return render(request, 'blog/draft_view.html', context)
+  else:
+    profile = Profile.objects.get(user=request.user)
+    recipe_draft = Post.objects.filter(Q(status='draft') & Q(author=profile))
+    recipe_draft_count = recipe_draft.count()
+
+    context = {
+      'recipe_draft': recipe_draft,
+      'recipe_draft_count': recipe_draft_count,
+    }
   return render(request, 'blog/draft_view.html', context)
+
 
 @login_required(login_url="/")
 def edit_recipe_draft(request, slug):
