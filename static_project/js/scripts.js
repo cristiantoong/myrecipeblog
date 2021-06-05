@@ -12,7 +12,7 @@ catBtn1.addEventListener('click', function(){
 
 catBtn2.addEventListener('click', function(){
     catModal.classList.add("slide-modal");
-    navbarMobile.classList.add('hide-navbar-mobile');
+    navbarMobile.classList.remove('show-navbar-mobile');
   })
 
 // catBtns.forEach(function(btn){
@@ -27,10 +27,27 @@ catBtn2.addEventListener('click', function(){
 // mobile nav
 const mobileBtn = document.querySelector('.mobile-menu');
 const navbarMobile = document.querySelector('.navbar-mobile');
-
+let test = false
 function showSideNavbar() {
-    navbarMobile.classList.toggle('show-navbar-mobile');
-    catModal.classList.remove("slide-modal");
+    // navbarMobile.classList.toggle('show-navbar-mobile');
+    // catModal.classList.remove("slide-modal");
+
+    if (!catModal.classList.contains("slide-modal")){
+      navbarMobile.classList.toggle('show-navbar-mobile');
+      console.log('first')
+    } else if (catModal.classList.contains("slide-modal")){
+      navbarMobile.classList.add('show-navbar-mobile');
+      catModal.classList.remove("slide-modal")
+      console.log('second')
+    } else {
+      
+      catModal.classList.remove("slide-modal");
+      navbarMobile.classList.toggle('show-navbar-mobile');
+      console.log('third')
+    }
+
+
+    
 
 }
 
