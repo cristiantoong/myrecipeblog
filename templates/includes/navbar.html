@@ -19,7 +19,6 @@
           <div class="mobile-menu">
             <span class="line"></span>
             <span class="line"></span>
-            <span class="line"></span>
           </div>
 
         </div>
@@ -81,6 +80,10 @@
 
     <div class="navbar-mobile">
 
+      <div class="user">
+        <p>Logged in as: <a href="#" style="color: tomato; font-size: 13px;">{{ request.user.username }}</a></p>
+      </div>
+
       <div class="right search">
         <form action="{% url 'blog:search-recipes' %}" method="POST">
           {% csrf_token %}
@@ -106,7 +109,7 @@
           <li><a class="categories-btn2" href="#">Categories</a></li> 
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#login">Login</a></li>
+          <li><a href="{% url 'blog:main-view' %}">Login</a></li>
         {% endif %}
         
       </ul>

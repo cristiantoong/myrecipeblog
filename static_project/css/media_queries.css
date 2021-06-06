@@ -2,6 +2,9 @@
   .contact {
     min-height: 80vh;
   }
+  .navbar-mobile {
+    transform: translateX(-100%);
+  }
 }
 
 
@@ -24,10 +27,12 @@
   }
   #main-page .left {
     width: 100%!important;
-    margin-bottom: 2rem;
+    order: 2;
   }
   #main-page .right {
     width: 100%!important;
+    order: 1;
+    margin-bottom: 2rem;
   }
 
   #recipes .recipe-cards .recipe-card {

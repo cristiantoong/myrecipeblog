@@ -1206,10 +1206,20 @@ footer .right a {
 
 .mobile-menu .line {
   display: block;
-  width: 35px;
-  height: 3px;
+  width: 32px;
+  height: 2px;
   background: #fff;
-  margin-bottom: .4rem;
+
+}
+.mobile-menu .line:first-child {
+  margin-bottom: .5rem;
+
+}
+
+
+.navbar-mobile .user {
+  padding: 0 2rem;
+  margin-bottom: 1rem;
 }
 
 
@@ -1217,6 +1227,7 @@ footer .right a {
   display: flex;
   margin-bottom: 1rem;
   padding: 0 2rem;
+
 }
 .navbar-mobile .right input {
   padding: .5rem .8rem;
