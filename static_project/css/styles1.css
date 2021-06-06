@@ -780,7 +780,7 @@ min-height: 500px;
 
 #profile-section .profile-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 50%;
   height: 200px;
 }
@@ -789,9 +789,9 @@ min-height: 500px;
 #profile-section .profile-info .like-count,
 #profile-section .profile-info .ratings-count {
   border: 1px solid #dbdbdb;
-  width: 200px;
+  width: 150px;
   padding: 2rem;
-  margin-left: 2rem;
+  /* margin-right: 2rem; */
   text-align: center;
 }
 
@@ -1025,8 +1025,11 @@ footer .right a {
   width: 100%;
 }
 
+#draft-table th {
+  background-color: #363636!important;
+}
+
 #draft-table td, #draft-table th {
-  border-bottom: 1px solid #ddd;
   padding: 1rem 3rem;
 }
 
@@ -1177,6 +1180,9 @@ footer .right a {
   padding: 2rem 0;
   transform: translateX(-100%);
   transition: all .3s ease;
+  -webkit-box-shadow: 1px 0px 10px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 0px 10px -3px rgba(0,0,0,0.75);
+  box-shadow: 1px 0px 10px -3px rgba(0,0,0,0.75);
 }
 .navbar-mobile ul li {
   list-style-type: none;
@@ -1185,10 +1191,9 @@ footer .right a {
 .navbar-mobile ul li:hover {
   background: black;
   cursor: pointer;
-}
-.navbar-mobile ul li:hover a {
   color: #fff;
 }
+
 
 /* for javascript */
 .show-navbar-mobile{
@@ -1239,3 +1244,23 @@ footer .right a {
   border: none;
   background: #FCE66E;
 }
+
+
+.search-table .search {
+  display: flex;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+
+}
+.search-table .search input {
+  padding: .5rem .8rem;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.search-table .search button {
+  padding: .5rem .8rem;
+  border: none;
+  background: #FCE66E;
+  cursor: pointer;
+}
+

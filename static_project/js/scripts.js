@@ -1,5 +1,3 @@
-
-
 //Show hide categories 
 const catModal = document.querySelector('.categories-modal')
 //const catBtns = document.querySelectorAll('.categories-btn')
@@ -47,7 +45,7 @@ function showSideNavbar() {
 
 mobileBtn.addEventListener('click', showSideNavbar)
 
-//if window width > 960px hide navbar mobile
+//if window width >= 960px hide navbar mobile
 window.addEventListener("resize", function() {
   var newWidth = window.innerWidth;
   if (newWidth >= "960"){

@@ -13,6 +13,7 @@ class RegisterForm(forms.Form):
 
 
 class EditProfileForm(forms.ModelForm):
+  avatar = forms.ImageField(widget=forms.FileInput)
   class Meta:
     model = Profile
     fields = ('first_name', 'last_name', 'avatar', 'website', 'location', 'bio', 'email', 'facebook', 'twitter', 'pinterest', 'instagram')
