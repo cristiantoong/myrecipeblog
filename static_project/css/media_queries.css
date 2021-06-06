@@ -15,6 +15,25 @@
   #nav{
     display: none!important;
   }
+  .container {
+    width: 100%!important;
+  }
+  #main-page {
+    flex-direction: column;
+    width: 100%;
+  }
+  #main-page .left {
+    width: 100%!important;
+    margin-bottom: 2rem;
+  }
+  #main-page .right {
+    width: 100%!important;
+  }
+
+  #recipes .recipe-cards .recipe-card {
+    width: 100%!important;
+  }
+
 }
 
 @media screen and (max-width: 480px) {

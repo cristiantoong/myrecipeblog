@@ -1171,7 +1171,7 @@ footer .right a {
 
 /* NAVBAR MOBILE */
 .navbar-mobile {
-  width: 200px;
+  width: 350px;
   position: absolute;
   background: #fff;
   padding: 2rem 0;
@@ -1210,4 +1210,21 @@ footer .right a {
   height: 3px;
   background: #fff;
   margin-bottom: .4rem;
+}
+
+
+.navbar-mobile .right {
+  display: flex;
+  margin-bottom: 1rem;
+  padding: 0 2rem;
+}
+.navbar-mobile .right input {
+  padding: .5rem .8rem;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.navbar-mobile .right button {
+  padding: .5rem .8rem;
+  border: none;
+  background: #FCE66E;
 }

@@ -73,13 +73,15 @@
     </div>
   </div>
 
+
+
     <!-- NAVBAR MOBILE -->
 
 
 
     <div class="navbar-mobile">
 
-      <div class="right">
+      <div class="right search">
         <form action="{% url 'blog:search-recipes' %}" method="POST">
           {% csrf_token %}
           <input type="text" placeholder="Search Recipes" name="searched">
@@ -89,19 +91,22 @@
 
       <ul>
         {% if user.is_authenticated %}
-          <li><a href="#">Home</a></li>
+          <li><a href="{% url 'blog:main-view' %}">Home</a></li>
+          <li><a href="{% url 'blog:myrecipes-view' %}">My Recipes</a></li>
+          <li><a href="{% url 'blog:create-recipe' %}">Create Recipe</a></li>
+          <li><a href="{% url 'blog:draft-view' %}">Drafts</a></li>
           <li><a class="categories-btn2" href="#">Categories</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Edit Profile</a></li>
-          <li><a href="#">Logout</a></li>
+          <li><a href="{% url 'accounts:profile-detail-view' request.user.profile.slug %}">Profile</a></li>
+          <li><a href="{% url 'accounts:edit-profile' %}">Edit Profile</a></li>
+          <li><a href="{% url 'accounts:logout-view' %}">Logout</a></li>
         {% else %}
-          <li><a href="#">Home</a></li>
+          <li><a href="{% url 'blog:main-view' %}">Home</a></li>
           <li><a class="categories-btn2" href="#">Categories</a></li> 
           <li><a href="#">About</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a href="#">Login</a></li>
+          <li><a href="#login">Login</a></li>
         {% endif %}
         
       </ul>
