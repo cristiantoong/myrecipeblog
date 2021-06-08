@@ -1272,3 +1272,15 @@ footer .right a {
   cursor: pointer;
 }
 
+.navbar-social {
+  font-size: 1rem;
+}
+
+.nav-mobile-socials {
+  padding: .5rem 2rem;
+  display: flex;
+}
+
+.nav-mobile-socials a {
+  margin-right: 2rem;
+}

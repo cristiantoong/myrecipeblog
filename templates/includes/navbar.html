@@ -58,13 +58,13 @@
             <li><a href="{% url 'accounts:logout-view' %}">Logout</a></li>
           {% else %}
             <li><a href="#">
-              <i class="fab fa-instagram"></i>
+              <i class="fab fa-instagram navbar-social"></i>
             </a></li>
             <li><a href="#">
-              <i class="fab fa-facebook"></i>
+              <i class="fab fa-facebook navbar-social"></i>
             </a></li>
             <li><a href="#">
-              <i class="fab fa-pinterest"></i>
+              <i class="fab fa-pinterest navbar-social"></i>
             </a></li>
 
           {% endif %}
@@ -112,6 +112,22 @@
           <a class="categories-btn2" href="#"><li>Categories</li></a>
           <!-- <a href="#"><li>About</li></a> -->
           <a href="{% url 'blog:main-view' %}"><li>Login</li></a>
+
+          <div class="nav-mobile-socials">
+            <a href="#">
+            <i class="fab fa-instagram navbar-social"></i>
+            </a>
+
+            <a href="#">
+              <i class="fab fa-facebook navbar-social"></i>
+            </a>
+            
+            <a href="#">
+              <i class="fab fa-pinterest navbar-social"></i>
+            </a>
+
+        </div>
+
         {% endif %}
         
       </ul>

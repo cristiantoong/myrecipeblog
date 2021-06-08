@@ -1,3 +1,9 @@
+// get current year (footer)
+const currentDate = new Date;
+const year = document.getElementById('year');
+year.innerHTML = currentDate.getFullYear();
+
+
 //Show hide categories 
 const catModal = document.querySelector('.categories-modal')
 //const catBtns = document.querySelectorAll('.categories-btn')
