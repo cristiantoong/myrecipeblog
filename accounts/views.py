@@ -15,7 +15,7 @@ from random import randint
 
 def login_view(request):
   recipes = Post.objects.filter(Q(featured=True) & Q(status='published'))
-  random_num = randint(0, len(recipes)-1)
+  # random_num = randint(0, len(recipes)-1)
 
   #random recipe featured
   # recipe_featured = Post.objects.filter(featured=True)[random_num]
@@ -171,7 +171,12 @@ def profile_detail_view(request, slug):
   all_avg_review = [reviews.average_review() for reviews in recipe_published]
   #delete empty queryset
   all_avg_review_result = [reviews for reviews in all_avg_review if reviews]
-  get_avg_review = (sum(all_avg_review_result) / len(all_avg_review_result))
+  
+  try:
+    get_avg_review = (sum(all_avg_review_result) / len(all_avg_review_result))
+  except ZeroDivisionError:
+    get_avg_review = 0
+
   get_count_review = len(all_avg_review_result)
 
   # print(all_avg_review)

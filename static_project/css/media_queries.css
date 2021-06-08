@@ -96,6 +96,16 @@
     overflow-x: auto;
   }
 
+  #register-form form .inputs2 button {
+    width: 130px!important;
+    
+  }
+
+  #register-form form .inputs2 a {
+    padding: 1rem 1.5rem;
+  }
+
+
 }
 
 @media screen and (max-width: 580px) {
@@ -133,7 +143,23 @@
   footer .center {
     margin-bottom: 1rem;
   }
-  
+
+  #register-form form .inputs2 {
+    flex-direction: column;
+  }
+
+  #register-form form .inputs2 button {
+    width: 100%!important;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    
+  }
+
+  #register-form form .inputs2 a {
+    width: 100%!important;
+    padding: 0.5rem 4rem;
+  }
+
 }
 
 

@@ -19,15 +19,9 @@ def about_view(request):
 @login_required(login_url="/")
 def main_view(request):
   recipes = Post.objects.filter(status='published')
-  for recipe in recipes:
-    user_recipe = recipe.photo.url
-    profile_image = recipe.author.avatar.url
-    profile_name = recipe.author.user
 
   context = {
     'recipes': recipes,
-    'profile_image': profile_image,
-    'profile_name': profile_name,
     }
   
   return render(request, 'blog/home.html', context)
