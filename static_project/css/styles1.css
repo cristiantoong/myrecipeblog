@@ -95,12 +95,15 @@ label:hover ~ input:checked ~ label {
 }
 
 
+
 .cancel-btn {
-  background: #FCE66E;
-  color: black;
-  padding: .7rem 1rem;
+  border: none;
+  background: #FCE66E!important;
+  color: #000!important;
+  padding: .5rem 1.8rem;
   text-transform: uppercase;
-  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  letter-spacing: 3px;
 }
 
 a {
@@ -492,6 +495,10 @@ width: 50%;
 #register-page #register-form form .inputs1 .left label {
   margin-bottom: 2rem;
 }
+
+#register-page #register-form form .inputs2 {
+  display: flex;
+}
 #register-page  #register-form form input {
   padding: .8rem .8rem;
   border: 1px solid #ccc;
@@ -516,6 +523,7 @@ width: 50%;
   font-weight: 600;
   letter-spacing: 3px;
   cursor: pointer;
+  margin-right: 1rem;
 }
 
 #error {
@@ -814,7 +822,7 @@ footer {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
-  flex-wrap: wrap;
+
   min-height: 10vh;
   /* margin-top: 3rem; */
 }

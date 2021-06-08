@@ -37,11 +37,11 @@
             <li><a href="{% url 'blog:create-recipe' %}">Create Recipe</a></li>
             <li><a href="{% url 'blog:draft-view' %}">Drafts</a></li>
             <li class="categories-btn1"><a href="#">Categories</a></li>
-            <li><a href="#">About</a></li>
+            <!-- <li><a href="#">About</a></li> -->
           {% else %}
             <li><a href="{% url 'accounts:login-view' %}">Home</a></li>
             <li><a class="categories-btn1" href="#">Categories</a></li>  
-            <li><a href="#">About</a></li>
+            <!-- <li><a href="{% url 'blog:about-view' %}">About</a></li> -->
           {% endif %}
           
 
@@ -57,9 +57,15 @@
             <li><a href="{% url 'accounts:edit-profile' %}">Edit Profile</a></li>
             <li><a href="{% url 'accounts:logout-view' %}">Logout</a></li>
           {% else %}
-            <li><a href="#">ig</a></li>
-            <li><a href="#">fb</a></li>
-            <li><a href="#">p</a></li>
+            <li><a href="#">
+              <i class="fab fa-instagram"></i>
+            </a></li>
+            <li><a href="#">
+              <i class="fab fa-facebook"></i>
+            </a></li>
+            <li><a href="#">
+              <i class="fab fa-pinterest"></i>
+            </a></li>
 
           {% endif %}
         </ul>
@@ -97,14 +103,14 @@
           <a href="{% url 'blog:create-recipe' %}"><li>Create Recipe</li></a>
           <a href="{% url 'blog:draft-view' %}"><li>Drafts</li></a>
           <a class="categories-btn2" href="#"><li>Categories</li></a>
-          <a href="#"><li>About</li></a>
+          <!-- <a href="#"><li>About</li></a> -->
           <a href="{% url 'accounts:profile-detail-view' request.user.profile.slug %}"><li>Profile</li></a>
           <a href="{% url 'accounts:edit-profile' %}"><li>Edit Profile</li></a>
           <a href="{% url 'accounts:logout-view' %}"><li>Logout</li></a>
         {% else %}
           <a href="{% url 'blog:main-view' %}"><li>Home</li></a>
           <a class="categories-btn2" href="#"><li>Categories</li></a>
-          <a href="#"><li>About</li></a>
+          <!-- <a href="#"><li>About</li></a> -->
           <a href="{% url 'blog:main-view' %}"><li>Login</li></a>
         {% endif %}
         

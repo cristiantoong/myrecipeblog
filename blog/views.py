@@ -12,6 +12,10 @@ from django.contrib.auth.models import AnonymousUser
 def home_view(request):
   return render(request, 'blog/home.html')
 
+def about_view(request):
+  return render(request, 'blog/about.html')
+
+
 @login_required(login_url="/")
 def main_view(request):
   recipes = Post.objects.filter(status='published')

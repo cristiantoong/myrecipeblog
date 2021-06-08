@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load widget_tweaks %}
 
 {% block title %}
   main
@@ -23,7 +23,9 @@
             <h3>Title: {{ recipe.title }}</h3>
             <br>
             <label for="">Status</label>
-            {{ edit_recipe_form.status }}
+            <br>
+            <br>
+            {{ edit_recipe_form.status|add_class:"custom-select" }}
             <br>
             <br>
             <br>

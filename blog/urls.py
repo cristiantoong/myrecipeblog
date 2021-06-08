@@ -12,6 +12,7 @@ from .views import (
   delete_recipe_draft,
   search_recipes,
   category_view,
+  about_view,
 )
 
 app_name = 'blog'
@@ -29,6 +30,7 @@ urlpatterns = [
   path('delete-draft/<slug>', delete_recipe_draft, name='delete-draft'),
   path('search-recipes/', search_recipes, name='search-recipes'),
   path('category/<cats>/', category_view, name='category-view'),
+  path('about/', about_view, name='about-view'),
   #path('rate-recipe/slug/', rate, name='rate-recipe'),
   #path('submit-review/<int:recipe_id>/', submit_review, name='submit-review'),
 ]

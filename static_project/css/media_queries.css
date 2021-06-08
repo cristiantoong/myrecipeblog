@@ -123,6 +123,16 @@
     padding: 0!important;
     order: 1;
   }
+
+  footer {
+    flex-direction: column;
+    width: 100%!important;
+    text-align: center;
+  }
+  footer .left,
+  footer .center {
+    margin-bottom: 1rem;
+  }
   
 }
 
